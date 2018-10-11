@@ -4,7 +4,7 @@ In this example, the code for chapter 7 of the book is provided. While going thr
 
 So let's begin:
 
-##Create a maven project from archetype
+## Create a maven project from archetype
 
 In order to create a maven project from an archetype, launch terminal and type the command below: 
 
