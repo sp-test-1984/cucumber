@@ -60,3 +60,26 @@ To get the dependencies (cucumber jar files) resolved and installed on local, in
     </build>
 
 
+## Add Cucumber Runner
+
+The only missing piece to have a fully functional cucumber skeleton, is to add a runner. A runner is an empty class that instructs cucumber where the features and glue code is, and which class invoke to use the Junit runner. Refer to example below:
+
+#### Class location
+
+`src/test/java/nicebank/RunCukesTest.java`
+
+
+```
+package nicebank;
+
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "classpath:nicebank",
+glue = "classpath:nicebank")
+public class RunCukesTest {
+}
+```
