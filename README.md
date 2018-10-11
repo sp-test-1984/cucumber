@@ -8,7 +8,11 @@ So let's begin:
 
 In order to create a maven project from an archetype, launch terminal and type the command below: 
 
-`mvn archetype:generate -DartifactId=atm -DgroupId=nicebank -DinteractiveMode=false -DartifactArchetypeId=maven-archetype-quickstart`
+`mvn archetype:generate 
+-DartifactId=atm 
+-DgroupId=nicebank 
+-DinteractiveMode=false 
+-DartifactArchetypeId=maven-archetype-quickstart`
 
 ## Add Cucumber Dependencies 
 
