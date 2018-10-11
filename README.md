@@ -12,7 +12,7 @@ In order to create a maven project from an archetype, launch terminal and type t
 
 ## Add Cucumber Dependencies 
 
-Now that we have a basic maven skeleton to work with, let's add the appropriate dependencies to the pom. Please refer t snippets below:
+Now that we have a basic maven skeleton to work with, let's add the appropriate dependencies to the pom. Please refer to snippets below:
 
         <dependency>
             <groupId>info.cukes</groupId>
