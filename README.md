@@ -36,3 +36,27 @@ Now that we have a basic maven skeleton to work with, let's add the appropriate 
 To get the dependencies (cucumber jar files) resolved and installed on local, invoke the following command on root (make sure to `cd` into the folder where te `pom.xml` is located):
 
 `mvn install`
+
+**Notes:** if maven complains about the following `ERROR        `
+
+
+`[ERROR] Source option 5 is no longer supported. Use 6 or later.
+ [ERROR] Target option 1.5 is no longer supported. Use 1.6 or later.`
+ 
+ it can be corrected by making the addition of the maven compiler plugin to the `pom.xml` and make it point to a different java version (example below)
+ 
+ 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
