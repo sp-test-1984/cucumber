@@ -1,10 +1,13 @@
 package nicebank;
 
 import cucumber.api.PendingException;
+import cucumber.api.Transform;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.graalvm.compiler.nodes.extended.MonitorEnter;
 import org.junit.Assert;
+import transforms.MoneyConverter;
 
 public class Steps {
     class Account{
@@ -20,7 +23,7 @@ public class Steps {
     }
 
     @Given("^I have deposited \\$(\\d+\\.\\d+) in  my account$")
-    public void i_have_deposited_$_in_my_account(Money amount) throws Throwable {
+    public void i_have_deposited_$_in_my_account(@Transform(MoneyConverter.class)Money amount) throws Throwable {
         Account myAccount = new Account();
         myAccount.deposit(amount);
 
