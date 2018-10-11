@@ -30,3 +30,9 @@ Now that we have a basic maven skeleton to work with, let's add the appropriate 
             <version>1.1.6</version>
             <scope>test</scope>
         </dependency>
+        
+## Invoke Maven Install on Project to Get dependencies resolved and installed on .m2
+
+To get the dependencies (cucumber jar files) resolved and installed on local, invoke the following command on root (make sure to `cd` into the folder where te `pom.xml` is located):
+
+`mvn install`
