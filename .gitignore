@@ -1,6 +1,6 @@
 *.lst
 .DS_Store
 *.class
-target/surefire-reports/TEST-nicebank.RunCukesTest.xml
-target/surefire-reports/nicebank.RunCukesTest.txt
+atm/src/target/surefire-reports/TEST-nicebank.RunCukesTest.xml
+atm/src/target/surefire-reports/nicebank.RunCukesTest.txt
 atm/.idea/*
