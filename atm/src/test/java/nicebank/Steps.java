@@ -8,25 +8,26 @@ import org.junit.Assert;
 
 public class Steps {
     class Account{
-        private int balance;
+        private Money balance = new Money();
 
-        public void deposit(int amount){
-            balance += amount;
+        public void deposit(Money amount){
+            balance = balance.add(amount);
         }
 
-        public int getBalance() {
+        public Money getBalance() {
             return balance;
         }
     }
 
-    @Given("^I have deposited \\$(\\d+) in  my account$")
-    public void i_have_deposited_$_in_my_account(int amount) throws Throwable {
+    @Given("^I have deposited \\$(\\d+\\.\\d+) in  my account$")
+    public void i_have_deposited_$_in_my_account(Money amount) throws Throwable {
         Account myAccount = new Account();
         myAccount.deposit(amount);
 
-        Assert.assertEquals("Incorrect Account Balance : ",
-                amount, myAccount.getBalance());
+       Assert.assertEquals("Incorrect Account Balanace - ",
+               amount, myAccount.getBalance());
     }
+
 
 
     @When("^I request \\$(\\d+)$")
