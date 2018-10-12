@@ -10,7 +10,38 @@ import transforms.MoneyConverter;
 
 public class Steps {
 
-    private Account myAccount;
+    private KnowsMyDomain helper;
+
+    public Steps(){
+        this.helper = new KnowsMyDomain();
+    }
+
+    class KnowsMyDomain{
+        private Account myAccount;
+        private CashSlot cashSlot;
+        private Teller teller;
+
+        public Account getMyAccount() {
+            if(myAccount == null){
+                myAccount = new Account();
+            }
+            return myAccount;
+        }
+
+        public CashSlot getCashSlot(){
+            if(cashSlot == null){
+                cashSlot = new CashSlot();
+            }
+            return cashSlot;
+        }
+
+        public Teller getTeller() {
+            if(teller == null){
+                teller = new Teller(getCashSlot());
+            }
+            return teller;
+        }
+    }
 
 
     class Account{
@@ -26,30 +57,48 @@ public class Steps {
     }
 
     class Teller{
-        public void withdrawFrom(Account account, int amount){
+        private CashSlot cashSlot;
 
+        public Teller(CashSlot cashSlot){
+            this.cashSlot = cashSlot;
+        }
+
+        public void withdrawFrom(Account account, int dollars){
+            cashSlot.dispense(dollars);
+        }
+    }
+
+    class CashSlot{
+
+        private int contents;
+
+        public int getContents(){
+            return contents;
+        }
+
+        public void dispense(int dollars){
+            contents = dollars;
         }
     }
 
     @Given("^I have deposited \\$(\\d+\\.\\d+) in  my account$")
     public void i_have_deposited_$_in_my_account(@Transform(MoneyConverter.class)Money amount) throws Throwable {
-        myAccount = new Account();
-        myAccount.deposit(amount);
+        helper.getMyAccount().deposit(amount);
 
        Assert.assertEquals("Incorrect Account Balanace - ",
-               amount, myAccount.getBalance());
+               amount, helper.getMyAccount().getBalance());
     }
 
 
     @When("^I withdraw \\$(\\d+)$")
     public void i_withdraw_$(int amount) throws Throwable {
-        Teller teller = new Teller();
-        teller.withdrawFrom(myAccount, amount);
+        helper.getTeller().withdrawFrom(helper.getMyAccount(), amount);
     }
 
 
     @Then("^\\$(\\d+) should be dispensed$")
-    public void $_should_be_dispensed(int arg1) throws Throwable{
-        throw new PendingException();
+    public void $_should_be_dispensed(int dollars) throws Throwable{
+        Assert.assertEquals("Incorrect Amount Dispensed - ",
+                dollars, helper.getCashSlot().getContents());
     }
 }
