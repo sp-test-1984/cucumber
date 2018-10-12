@@ -46,6 +46,18 @@ public class Money {
         return new Money(newDollars, newCents);
     }
 
+    public Money minus(Money amount){
+        int newDollars = this.dollars - amount.getDollars();
+        int newCents = this.cents - amount.getCents();
+
+        if(newCents < 0){
+            newCents+=100;
+            newDollars--;
+        }
+
+        return new Money(newDollars, newCents);
+    }
+
     @Override
     public boolean equals(Object other){
         boolean equal = false;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="nicebank.RunCukesTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="nicebank.RunCukesTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
@@ -46,7 +46,7 @@
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="10"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -65,8 +65,9 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Given I have deposited $100.00 in  my account" time="0.003"/>
+  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Given I have deposited $100.00 in  my account" time="0.002"/>
   <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="When I withdraw $20" time="0"/>
   <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Then $20 should be dispensed" time="0"/>
-  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Scenario: Successful Withdrawal from an Account in Credit" time="0"/>
+  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="And the balance of my account should be $80.00" time="0"/>
+  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Scenario: Successful Withdrawal from an Account in Credit" time="0.001"/>
 </testsuite>
