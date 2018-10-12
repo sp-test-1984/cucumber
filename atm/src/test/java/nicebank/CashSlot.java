@@ -1,5 +1,8 @@
 package nicebank;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CashSlot {
 
     private int contents;

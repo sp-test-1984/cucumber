@@ -1,12 +1,14 @@
 package nicebank;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Teller {
 
-    private CashSlot cashSlot;
+    @Autowired
+    CashSlot cashSlot;
 
-    public Teller(CashSlot cashSlot){
-        this.cashSlot = cashSlot;
-    }
 
     public void withdrawFrom(Account account, int dollars){
         cashSlot.dispense(dollars);

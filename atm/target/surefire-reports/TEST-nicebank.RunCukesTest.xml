@@ -65,8 +65,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Given I have deposited $100.00 in  my account" time="0.002"/>
-  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="When I withdraw $20" time="0.001"/>
+  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Given I have deposited $100.00 in  my account" time="0.003"/>
+  <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="When I withdraw $20" time="0"/>
   <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Then $20 should be dispensed" time="0"/>
   <testcase classname="Scenario: Successful Withdrawal from an Account in Credit" name="Scenario: Successful Withdrawal from an Account in Credit" time="0"/>
 </testsuite>
