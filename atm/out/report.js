@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 245294879,
+  "duration": 178968312,
   "status": "passed"
 });
 formatter.scenario({
@@ -48,7 +48,7 @@ formatter.match({
   "location": "AccountSteps.my_account_has_been_credited_with_$(Money)"
 });
 formatter.result({
-  "duration": 80892087,
+  "duration": 96761557,
   "status": "passed"
 });
 formatter.match({
@@ -61,7 +61,7 @@ formatter.match({
   "location": "TellerSteps.i_withdraw_$(int)"
 });
 formatter.result({
-  "duration": 2501179,
+  "duration": 2737696,
   "status": "passed"
 });
 formatter.match({
@@ -74,7 +74,7 @@ formatter.match({
   "location": "CashSlotSteps.$_should_be_dispensed(int)"
 });
 formatter.result({
-  "duration": 2864654,
+  "duration": 4299436,
   "status": "passed"
 });
 formatter.match({
@@ -87,15 +87,15 @@ formatter.match({
   "location": "AccountSteps.the_balance_of_my_account_should_be_$(Money)"
 });
 formatter.result({
-  "duration": 121651,
+  "duration": 99101,
   "status": "passed"
 });
 formatter.after({
-  "duration": 8772846,
+  "duration": 438715195,
   "status": "passed"
 });
 formatter.after({
-  "duration": 428514679,
+  "duration": 10072828,
   "status": "passed"
 });
 });
