@@ -9,6 +9,10 @@ import org.junit.Assert;
 import transforms.MoneyConverter;
 
 public class Steps {
+
+    private Account myAccount;
+
+
     class Account{
         private Money balance = new Money();
 
@@ -21,9 +25,15 @@ public class Steps {
         }
     }
 
+    class Teller{
+        public void withdrawFrom(Account account, int amount){
+
+        }
+    }
+
     @Given("^I have deposited \\$(\\d+\\.\\d+) in  my account$")
     public void i_have_deposited_$_in_my_account(@Transform(MoneyConverter.class)Money amount) throws Throwable {
-        Account myAccount = new Account();
+        myAccount = new Account();
         myAccount.deposit(amount);
 
        Assert.assertEquals("Incorrect Account Balanace - ",
@@ -32,9 +42,9 @@ public class Steps {
 
 
     @When("^I withdraw \\$(\\d+)$")
-    public void i_withdraw_$(int arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public void i_withdraw_$(int amount) throws Throwable {
+        Teller teller = new Teller();
+        teller.withdrawFrom(myAccount, amount);
     }
 
 
