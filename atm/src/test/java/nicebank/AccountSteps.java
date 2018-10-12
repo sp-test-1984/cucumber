@@ -12,6 +12,9 @@ public class AccountSteps {
     @Autowired
     Account myAccount;
 
+    @Autowired
+    TransactionQueue queue;
+
     @Given("^my account has been credited with \\$(\\d+\\.\\d+)$")
     public void my_account_has_been_credited_with_$(@Transform(MoneyConverter.class) Money amount) throws Throwable {
         myAccount.credit(amount);
@@ -21,6 +24,7 @@ public class AccountSteps {
     public void the_balance_of_my_account_should_be_$(@Transform(MoneyConverter.class)  Money amount) throws Throwable {
         Assert.assertEquals("Incorrect Account Balance -",
                 amount, myAccount.getBalance());
+        System.out.println(">>>>" + myAccount.getBalance());
     }
 
 
